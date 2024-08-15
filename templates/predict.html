@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict MBTI Type</title>
+</head>
+<body>
+    <h1>Predict MBTI Type</h1>
+    <form method="POST">
+        <label for="user_name">Enter user name:</label>
+        <input type="text" id="user_name" name="user_name" required><br><br>
+        <label for="input_text">Enter text:</label>
+        <textarea id="input_text" name="input_text" rows="4" cols="50" required></textarea><br><br>
+        <input type="submit" value="Predict">
+    </form>
+    {% if success %}
+        <h2>Save Successful!</h2>
+    {% endif %}
+    {% if predicted_type %}
+        <h2>User Name:</h2>
+        <p>{{ user_name }}</p>
+        <h2>Input Text:</h2>
+        <p>{{ input_text }}</p>
+        <h2>Predicted MBTI Type:</h2>
+        <p>{{ predicted_type }}</p>
+    {% endif %}
+    <br>
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+</html>
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Information</title>
+</head>
+<body>
+    <h1>Share Information</h1>
+    <form method="POST">
+        <label for="share_text">Enter share text:</label>
+        <textarea id="share_text" name="share_text" rows="4" cols="50" required></textarea><br><br>
+        <input type="submit" value="Check">
+    </form>
+    {% if suggestions %}
+        <h2>Suggestions:</h2>
+        <p>{{ suggestions }}</p>
+    {% endif %}
+    {% if share_text %}
+        <h2>Share Text:</h2>
+        <p>{{ share_text }}</p>
+    {% endif %}
+    <br>
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+</html>
